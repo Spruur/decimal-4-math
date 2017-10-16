@@ -8,7 +8,8 @@
     "gmp",
     "currency",
     "bigint",
-    "bignum"
+    "bignum",
+    "php"
   ],
 
   "homepage": "https://github.com/Spruur/decimal-4-math",
@@ -32,9 +33,5 @@
   "require": {
     "php": ">=5.4.0",
     "ext-gmp": "*"
-  },
-
-  "require-dev": {
-    "phpunit/phpunit": "3.7.*"
   }
 }
