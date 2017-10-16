@@ -2,3 +2,5 @@
 test\.php
 
 vendor/
+composer.phar
+composer.lock
