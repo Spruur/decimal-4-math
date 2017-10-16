@@ -26,7 +26,7 @@ Install Decimal-4-Math using [Composer package manager](https://packagist.org/):
 ```
 {
     "require": {
-        "spruur/decimal-4-math": "dev-master"
+        "spruur/decimal-4-math": "1.0"
     }
 }
 ```
@@ -47,7 +47,7 @@ require 'vendor/autoload.php';
 ```
 use Dec4Math\Decimal4;
     
-$num1 = new Decimal4("5");
+$num1 = new Decimal4("0.5");
 $num2 = new Decimal4("10.5601");
     
 $num2->fractionValue();     // 5601
