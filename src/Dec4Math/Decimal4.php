@@ -58,7 +58,6 @@ class Decimal4 {
      */
     public function __toString()
     {
-        // TODO: Implement __toString() method.
         $zeros = str_repeat('0', 4 - strlen(abs($this->fractionValue())));
         return $this->integerValue().self::SEPARATOR.$zeros.(abs($this->fractionValue()));
     }
@@ -131,5 +130,92 @@ class Decimal4 {
             gmp_add(gmp_init($num, 10), $addition),
             $divider,
             GMP_ROUND_ZERO);
+    }
+
+
+
+    /**
+     * Creates a new decimal which is a sum of $a and $b
+     *
+     * @param Decimal4 $a
+     * @param Decimal4 $b
+     * @return Decimal4
+     */
+    public static function plus(Decimal4 $a, Decimal4 $b) {
+        $return = new Decimal4("0");
+
+        $return->mills = gmp_strval(
+            gmp_add(
+                gmp_init($a->mills, 10),
+                gmp_init($b->mills, 10)
+            )
+        );
+
+        return $return;
+    }
+
+    /**
+     * Creates a new decimal which is a difference of the $a and $b.
+     *
+     * @param Decimal4 $a
+     * @param Decimal4 $b
+     * @return Decimal4
+     */
+    public static function minus(Decimal4 $a, Decimal4 $b) {
+        $return = new Decimal4("0");
+
+        $return->mills = gmp_strval(
+            gmp_add(
+                gmp_init($a->mills, 10),
+                gmp_neg(gmp_init($b->mills, 10))
+            )
+        );
+
+        return $return;
+    }
+
+
+    /**
+     * Creates a new decimal which is a result of a multiplication of the passed decimal by the
+     * passed integer factor.
+     *
+     * @param Decimal4 $decimal
+     * @param integer $int
+     * @return Decimal4
+     */
+    public static function multiply(Decimal4 $decimal, $int) {
+        $return = new Decimal4("0");
+
+        $return->mills = gmp_strval(
+            gmp_mul(
+                gmp_init($decimal->mills, 10),
+                gmp_init($int, 10)
+            )
+        );
+
+        return $return;
+    }
+
+    /**
+     * Creates a new decimal which is a result of a multiplication of the passed decimals.
+     *
+     * @param Decimal4 $a
+     * @param Decimal4 $b
+     * @return Decimal4
+     */
+    public static function mul(Decimal4 $a, Decimal4 $b) {
+        $return = new Decimal4("0");
+
+        $return->mills = gmp_strval(
+            gmp_div_q(
+                gmp_mul(
+                    gmp_init($a->mills, 10),
+                    gmp_init($b->mills, 10)
+                ),
+                10000
+            )
+        );
+
+        return $return;
     }
 }
