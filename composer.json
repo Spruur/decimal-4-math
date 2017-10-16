@@ -1,0 +1,40 @@
+{
+  "name": "spruur/decimal-4-math",
+  "type": "library",
+  "description": "gmp-based arbitrary precision operations on currency amounts \"XXX.YY\"; Why? Floats are bad",
+
+  "keywords": [
+    "money",
+    "gmp",
+    "currency",
+    "bigint",
+    "bignum"
+  ],
+
+  "homepage": "https://github.com/Spruur/decimal-4-math",
+  "license": "MIT",
+
+  "authors": [
+    {
+      "name": "Karl Hendrik Leppmets",
+      "email": "karl.leppmets@gmail.com"
+    }
+  ],
+
+  "autoload": {
+    "psr-0": {
+      "Dec4Math": "src/"
+    }
+  },
+
+  "minimum-stability": "dev",
+
+  "require": {
+    "php": ">=5.4.0",
+    "ext-gmp": "*"
+  },
+
+  "require-dev": {
+    "phpunit/phpunit": "3.7.*"
+  }
+}
