@@ -26,7 +26,7 @@ Install Decimal-4-Math using [Composer package manager](https://packagist.org/):
 ```
 {
     "require": {
-        "spruur/decimal-4-math": "1.0"
+        "spruur/decimal-4-math": "1.0.1"
     }
 }
 ```
