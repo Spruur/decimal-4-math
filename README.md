@@ -1,1 +1,3 @@
 Decimal-4-Math
+
+Just starting this. More info soon...
