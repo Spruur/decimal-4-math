@@ -1,7 +1,7 @@
 {
   "name": "spruur/decimal-4-math",
   "type": "library",
-  "description": "gmp-based arbitrary precision operations on currency amounts \"XXX.YY\"; Why? Floats are bad",
+  "description": "gmp-based arbitrary precision operations on currency amounts in PHP. Why? Floats are bad",
 
   "keywords": [
     "money",
