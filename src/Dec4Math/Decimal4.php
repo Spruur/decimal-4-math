@@ -218,4 +218,40 @@ class Decimal4 {
 
         return $return;
     }
+
+
+    /**
+     * Creates a new decimal which is a result of a division of $a by $b.
+     *
+     * @param Decimal4 $a
+     * @param Decimal4 $b
+     * @return Decimal4
+     */
+    public static function div(Decimal4 $a, Decimal4 $b) {
+        $signA = (strval($a)[0] === '-') ? -1 : 1;
+        $signB = (strval($b)[0] === '-') ? -1 : 1;
+
+        $return = new Decimal4('0');
+        $return->mills = gmp_strval(
+            gmp_div_q(
+                gmp_add(
+                    gmp_mul(
+                        gmp_abs(gmp_init($a->mills, 10)),
+                        10000
+                    ),
+                    5000
+                ),
+                gmp_abs(gmp_init($b->mills, 10)),
+                GMP_ROUND_ZERO
+            )
+        );
+
+        if ($signA * $signB < 0) {
+            $return->mills = gmp_strval(
+                gmp_neg(gmp_init($return->mills, 10))
+            );
+        }
+
+        return $return;
+    }
 }
