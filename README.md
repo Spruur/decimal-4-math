@@ -26,7 +26,7 @@ Install Decimal-4-Math using [Composer package manager](https://packagist.org/):
 ```
 {
     "require": {
-        "spruur/decimal-4-math": "1.0.1"
+        "spruur/decimal-4-math": "1.0.2"
     }
 }
 ```
@@ -58,4 +58,5 @@ echo Decimal4::plus($num1, $num2);      // 11.0601
 echo Decimal4::minus($num2, $num1);     // 10.0601
 echo Decimal4::multiply($num1, 2);      // 1.0000
 echo Decimal4::mul($num1, $num2);       // 5.2800
+echo Decimal4::div($num2, $num1);       // 21.1203
 ```
